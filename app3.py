@@ -3,13 +3,12 @@ from ultralytics import YOLO
 import cv2
 import numpy as np
 import pandas as pd
-import time
 
-st.set_page_config(page_title="AI Deteksi Sampah", layout="wide")
+st.set_page_config(page_title="Waste Detection", layout="wide")
 
 model = YOLO("best.pt") 
 
-st.title("Deteksi Sampah BRYAN GANTENG ABIS")
+st.title("Waste Detection")
 
 option = st.radio("Pilih Mode:", ["Webcam", "Upload Gambar"])
 
@@ -95,44 +94,19 @@ def tampilkan_kategori(results):
 
 
 if option == "Webcam":
-    run = st.checkbox("Nyalakan Webcam")
+    camera_image = st.camera_input("Ambil foto menggunakan webcam")
 
-    # jendela tampilan kamera
-    frame_slot = st.empty()
-    info_slot = st.empty()
-
-    cap = cv2.VideoCapture(0)
-
-    # Atur resolusi agar ringan
-    cap.set(cv2.CAP_PROP_FRAME_WIDTH, 480)
-    cap.set(cv2.CAP_PROP_FRAME_HEIGHT, 360)
-
-    while run:
-        ret, frame = cap.read()
-        if not ret:
-            st.warning("Gagal membaca kamera.")
-            break
-
-        # kecilkan frame agar YOLO cepat
-        frame = cv2.resize(frame, (480, 360))
+    if camera_image:
+        file_bytes = np.asarray(bytearray(camera_image.read()), dtype=np.uint8)
+        frame = cv2.imdecode(file_bytes, 1)
         frame_rgb = cv2.cvtColor(frame, cv2.COLOR_BGR2RGB)
 
-        # YOLO lebih cepat jika gunakan stream=False
-        results = model.predict(frame_rgb, conf=0.3, stream=False)
-
-        # tampilkan bounding box
+        results = model.predict(frame_rgb, conf=0.3)
         annotated = results[0].plot()
-        frame_slot.image(annotated, channels="RGB")
 
-        # tampilkan kategori sampah
-        info_slot.empty()
-        with info_slot:
-            tampilkan_kategori(results)
+        st.image(annotated, caption="Hasil Deteksi")
 
-        # sleep kecil supaya tidak over-refresh
-        time.sleep(0.03)
-
-    cap.release()
+        tampilkan_kategori(results)
 
 
 else:
