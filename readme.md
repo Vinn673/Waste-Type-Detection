@@ -185,6 +185,7 @@ The application is hosted on **Streamlit Community Cloud**:
 
 | Name | Student ID |
 | --- | --- |
-| **Brian Nicholas Tedjo** | 2802403183 |
-| **Jason Budiharjo** | 2802419446 |
+| **Bryan Carlos Matruti** | 2802491204 |
 | **Marvin Adriano Rusdianto** | 2802402275 |
+| **I Gede Aryaputra Maheswara** | 2802488922 |
+| **Ernest Angelo Winoto** | 2802494755 |
