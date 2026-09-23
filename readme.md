@@ -1,4 +1,4 @@
-# AI-Powered Waste Type Detection
+<img width="1911" height="1078" alt="image" src="https://github.com/user-attachments/assets/7421450d-de0e-47ab-bbde-25463819de14" /># AI-Powered Waste Type Detection
 
 An interactive computer vision web application built with Streamlit and YOLO (Ultralytics) that detects waste objects in real time and classifies them into **Organic (*Organik*)** and **Inorganic (*Anorganik*)** categories.
 
@@ -8,7 +8,7 @@ An interactive computer vision web application built with Streamlit and YOLO (Ul
 
 Access the live application deployed on Streamlit Community Cloud:
 
-👉 **[https://waste-type-detection-oybbjtnv7yzsejug3degew.streamlit.app/](https://waste-type-detection-oybbjtnv7yzsejug3degew.streamlit.app/)**
+👉 **[https://waste-type-detection-sprhkotwpyo4gcebfj67st.streamlit.app/](https://waste-type-detection-sprhkotwpyo4gcebfj67st.streamlit.app/)**
 
 ---
 
