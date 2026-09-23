@@ -173,7 +173,7 @@ To run this application locally on your machine, follow these steps:
 ## 🌐 Deployment
 
 The application is hosted on **Streamlit Community Cloud**:
-* **Live URL**: [https://waste-type-detection-oybbjtnv7yzsejug3degew.streamlit.app/](https://waste-type-detection-oybbjtnv7yzsejug3degew.streamlit.app/)
+* **Live URL**: [https://waste-type-detection-sprhkotwpyo4gcebfj67st.streamlit.app/](https://waste-type-detection-sprhkotwpyo4gcebfj67st.streamlit.app/)
 * The deployment utilizes `opencv-python-headless` to ensure headless Linux server compatibility without missing shared graphics libraries (`libGL.so.1`).
 * `streamlit-webrtc` operates with public STUN servers (`stun.l.google.com:19302`) for reliable NAT traversal in cloud container environments.
 
